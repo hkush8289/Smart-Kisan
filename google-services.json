@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "510461130324",
+    "firebase_url": "https://major-e2f2e.firebaseio.com",
+    "project_id": "major-e2f2e",
+    "storage_bucket": "major-e2f2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510461130324:android:d4d365be9688fb7d555fc1",
+        "android_client_info": {
+          "package_name": "com.example.hp.major"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510461130324-mhhqpm9p0f22v5phr818i2v2e93ujuju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHqS5bhsx6TEvVihuRpKHDfV9Q8nbJjGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510461130324-mhhqpm9p0f22v5phr818i2v2e93ujuju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
