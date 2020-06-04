@@ -8,53 +8,653 @@
     tools:context=".DashActivity"
     tools:showIn="@layout/app_bar_dash">
 
-    <TextView
-        android:id="@+id/temp"
-        android:layout_width="103dp"
-        android:layout_height="56dp"
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="136dp"
+        android:layout_height="118dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Temparature"
+        app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.788" />
+        app:layout_constraintVertical_bias="0.736">
 
-    <TextView
-        android:id="@+id/hum"
-        android:layout_width="133dp"
-        android:layout_height="107dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="74dp"
+                android:layout_height="64dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="41dp"
+                android:onClick="crop"
+                app:srcCompat="@drawable/plant" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="81dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="7dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="Crop Prediction"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="138dp"
+        android:layout_height="118dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Humidity"
+        app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.891" />
+        app:layout_constraintVertical_bias="0.736">
 
-    <TextView
-        android:id="@+id/soil"
-        android:layout_width="84dp"
-        android:layout_height="56dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="74dp"
+                android:layout_height="64dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="43dp"
+                android:onClick="youtube"
+                app:srcCompat="@drawable/video" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="77dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="78dp"
+                android:layout_marginEnd="29dp"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="Watch Videos on Farming"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="136dp"
+        android:layout_height="118dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Soil"
+        app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.788" />
+        app:layout_constraintVertical_bias="0.736">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="74dp"
+                android:layout_height="64dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="39dp"
+                android:onClick="news"
+                app:srcCompat="@drawable/news" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="87dp"
+                android:layout_height="27dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="81dp"
+                android:layout_marginEnd="21dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="Read News about Smart Agriculture"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView6"
+        android:layout_width="136dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.943">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="74dp"
+                android:layout_height="64dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="40dp"
+                android:onClick="setting"
+                app:srcCompat="@drawable/setting" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="83dp"
+                android:layout_height="31dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="26dp"
+                android:layout_marginBottom="7dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="@string/action_settings"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView7"
+        android:layout_width="138dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.943">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="74dp"
+                android:layout_height="64dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="41dp"
+                android:onClick="cloud"
+                app:srcCompat="@drawable/cloudcomputing" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="88dp"
+                android:layout_height="28dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="78dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="View Data from ThinkSpeak Cloud"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="136dp"
+        android:layout_height="118dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.932">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="74dp"
+                android:layout_height="64dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="42dp"
+                android:onClick="shop"
+                app:srcCompat="@drawable/shop" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="78dp"
+                android:layout_marginEnd="26dp"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="Shop Products on kisanhelpline.com"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <ViewFlipper
+        android:id="@+id/v_flipper"
+        android:layout_width="0dp"
+        android:layout_height="210dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+    </ViewFlipper>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView8"
+        android:layout_width="136dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="74dp"
+                android:layout_height="64dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="31dp"
+                android:layout_marginBottom="45dp"
+                android:clickable="true"
+                android:onClick="temperature"
+                app:srcCompat="@drawable/temp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="80dp"
+                android:layout_height="33dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="76dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="9dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="Temperature Monitoring"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView9"
+        android:layout_width="138dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="73dp"
+                android:layout_height="63dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="43dp"
+                android:clickable="true"
+                android:onClick="humidity"
+                app:srcCompat="@drawable/humidity" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="73dp"
+                android:layout_height="31dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="78dp"
+                android:layout_marginEnd="33dp"
+                android:layout_marginBottom="9dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="Humidity Monitoring"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView10"
+        android:layout_width="136dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="76dp"
+                android:layout_height="65dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="26dp"
+                android:layout_marginBottom="43dp"
+                android:clickable="true"
+                android:onClick="moisture"
+                app:srcCompat="@drawable/soil" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="83dp"
+                android:layout_height="34dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="76dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="Moisture Content Monitoring"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView11"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.299">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="110dp"
+                android:layout_height="84dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="85dp"
+                android:layout_marginEnd="273dp"
+                android:layout_marginBottom="11dp"
+                android:fontFamily="@font/bree_serif"
+                android:textAlignment="center"
+                android:textColor="#4CAF50"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/hum"
+                android:layout_width="109dp"
+                android:layout_height="83dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="147dp"
+                android:layout_marginTop="85dp"
+                android:layout_marginEnd="139dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/bree_serif"
+                android:textAlignment="center"
+                android:textColor="#FF9800"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/soil"
+                android:layout_width="112dp"
+                android:layout_height="81dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="272dp"
+                android:layout_marginTop="86dp"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="13dp"
+                android:fontFamily="@font/bree_serif"
+                android:textAlignment="center"
+                android:textColor="#CDDC39"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="101dp"
+                android:layout_height="23dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="146dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="148dp"
+                android:layout_marginBottom="147dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="DashBoard"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="59dp"
+                android:layout_marginEnd="291dp"
+                android:layout_marginBottom="101dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="Temperature"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="89dp"
+                android:layout_height="21dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="154dp"
+                android:layout_marginTop="59dp"
+                android:layout_marginEnd="152dp"
+                android:layout_marginBottom="100dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="Humidity"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="284dp"
+                android:layout_marginTop="61dp"
+                android:layout_marginEnd="22dp"
+                android:layout_marginBottom="101dp"
+                android:fontFamily="@font/bree_serif"
+                android:text="Field Condition"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>

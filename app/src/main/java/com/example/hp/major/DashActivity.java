@@ -1,10 +1,9 @@
 package com.example.hp.major;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,38 +13,40 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.components.YAxis;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-
-public class DashActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class DashActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private FirebaseAuth auth;
-    TextView texttemp, texthum, textsoil;
+    TextView texttemp, texthum, textsoil, txt_email;
     DatabaseReference reff = FirebaseDatabase.getInstance().getReference();
     private FirebaseAuth.AuthStateListener authListener;
+    ViewFlipper v_flipper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        View header = navigationView.getHeaderView(0);
+        txt_email = header.findViewById(R.id.emailadd);
+        int images[] = {R.drawable.slidea, R.drawable.slideb, R.drawable.slidec, R.drawable.slided};
+        v_flipper = findViewById(R.id.v_flipper);
+        for (int image : images) {
+            flipperimages(image);
+        }
         texttemp = findViewById(R.id.temp);
         texthum = findViewById(R.id.hum);
         textsoil = findViewById(R.id.soil);
@@ -62,32 +63,22 @@ public class DashActivity extends AppCompatActivity
                 }
             }
         };
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-
         if (auth.getCurrentUser() != null) {
-
+            FirebaseUser firebaseUser = auth.getCurrentUser();
+            String a = firebaseUser.getEmail();
+            txt_email.setText("" + a);
             reff.child("DHT11").child("Humidity").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String value = String.valueOf(dataSnapshot.child("value").getValue());
-                    texthum.setText(value);
+                    texthum.setText(value+"%");
                 }
 
                 @Override
@@ -100,7 +91,7 @@ public class DashActivity extends AppCompatActivity
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String userID = String.valueOf(dataSnapshot.child("value").getValue());
 
-                    texttemp.setText(userID);
+                    texttemp.setText(userID+"°C");
                 }
 
                 @Override
@@ -113,8 +104,15 @@ public class DashActivity extends AppCompatActivity
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String userID = String.valueOf(dataSnapshot.child("value").getValue());
+                    if (userID.equals("1024")) {
+                        textsoil.setText("DRY");
+                        textsoil.setTextColor(Color.RED);
 
-                    textsoil.setText(userID);
+
+                    } else {
+                        textsoil.setText("WET");
+                        textsoil.setTextColor(Color.BLUE);
+                    }
                 }
 
                 @Override
@@ -126,6 +124,16 @@ public class DashActivity extends AppCompatActivity
         }
 
 
+    }
+
+    public void flipperimages(int image) {
+        ImageView imageView = new ImageView(this);
+        imageView.setBackgroundResource(image);
+        v_flipper.addView(imageView);
+        v_flipper.setFlipInterval(3000);
+        v_flipper.setAutoStart(true);
+        v_flipper.setInAnimation(this, android.R.anim.slide_in_left);
+        v_flipper.setOutAnimation(this, android.R.anim.slide_out_right);
     }
 
     @Override
@@ -154,7 +162,8 @@ public class DashActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Intent intent = new Intent(this, SettingActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -166,22 +175,65 @@ public class DashActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
+        if (id == R.id.nav_share) {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT,
+                    "Hey check out my app at: https://github.com/hkush8289/Smart-Kisan");
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
 
         } else if (id == R.id.nav_send) {
+            finish();
 
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void youtube(View view) {
+        Intent intent = new Intent(this, YoutubeActivity.class);
+        startActivity(intent);
+    }
+
+    public void news(View view) {
+        Intent intent = new Intent(this, NewsActivity.class);
+        startActivity(intent);
+    }
+
+    public void temperature(View view) {
+        Intent intent = new Intent(this, TemperatureActivity.class);
+        startActivity(intent);
+    }
+
+    public void humidity(View view) {
+        Intent intent = new Intent(this, HumidityActivity.class);
+        startActivity(intent);
+    }
+
+    public void moisture(View view) {
+        Intent intent = new Intent(this, MoistureActivity.class);
+        startActivity(intent);
+    }
+
+    public void shop(View view) {
+        Intent intent = new Intent(this, ShopActivity.class);
+        startActivity(intent);
+    }
+
+    public void cloud(View view) {
+        Intent intent = new Intent(this, CloudActivity.class);
+        startActivity(intent);
+    }
+
+    public void setting(View view) {
+        Intent intent = new Intent(this, SettingActivity.class);
+        startActivity(intent);
+    }
+    public void crop(View view) {
+        Intent intent = new Intent(this, CropActivity.class);
+        startActivity(intent);
     }
 }

@@ -11,6 +11,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CropActivity" android:label="Crop Prediction"></activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="About the Application" />
+        <activity android:name=".SettingActivity" />
+        <activity
+            android:name=".CloudActivity"
+            android:label="Data From ThinkSpeak Cloud" />
+        <activity
+            android:name=".ShopActivity"
+            android:label="Shop Products" />
+        <activity
+            android:name=".MoistureActivity"
+            android:label="Soil Monitoring" />
+        <activity
+            android:name=".HumidityActivity"
+            android:label="Humidity Monitoring" />
+        <activity
+            android:name=".TemperatureActivity"
+            android:label="Temperature Monitoring" />
+        <activity
+            android:name=".NewsActivity"
+            android:label="News" />
+        <activity
+            android:name=".YoutubeActivity"
+            android:label="Videos" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".splash_activity"
@@ -32,7 +58,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".DashActivity"
-            android:label="@string/title_activity_dash"
+            android:label="Smart Kisan"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".WelcomeActivity"
@@ -47,7 +73,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".CreateActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

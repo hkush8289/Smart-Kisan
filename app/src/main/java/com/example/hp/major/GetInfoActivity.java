@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class GetInfoActivity extends AppCompatActivity {
-    EditText heightt, weightt, calorie, stepp;
+    EditText heightt, weightt;
     Button save;
     private DatabaseReference reff;
     private FirebaseAuth auth;
@@ -34,8 +34,6 @@ public class GetInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_get_info);
         heightt = findViewById(R.id.heightt);
         weightt = findViewById(R.id.weightt);
-        calorie = findViewById(R.id.calorie);
-        stepp = findViewById(R.id.stepp);
         progressBar = findViewById(R.id.progressBar2);
         progressBar.setVisibility(View.GONE);
         reff = FirebaseDatabase.getInstance().getReference();
@@ -50,30 +48,6 @@ public class GetInfoActivity extends AppCompatActivity {
         String ax = user.getUid();
         reff.child("Users").child(ax).child("name").setValue(heightt.getText().toString());
         reff.child("Users").child(ax).child("number").setValue(weightt.getText().toString());
-        reff.child("Users").child(ax).child("location").setValue(calorie.getText().toString());
-        reff.child("Users").child(ax).child("size").setValue(stepp.getText().toString());
-        reff.child("Users").child(ax).child("size").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                mSeries = Float.parseFloat(String.valueOf(dataSnapshot.getValue()));
-                Log.d("mSeries", (String.valueOf(mSeries)));
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
-        reff.child("Users").child(ax).child("location").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                mSeries = Float.parseFloat(String.valueOf(dataSnapshot.getValue()));
-                Log.d("mSeries", (String.valueOf(mSeries)));
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
         reff.child("Users").child(ax).child("number").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

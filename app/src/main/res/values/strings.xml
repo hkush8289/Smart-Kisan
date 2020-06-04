@@ -9,4 +9,17 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="btn_remove">Remove</string>
+    <string name="verywet">Very Wet</string>
+    <string name="wet">Wet</string>
+    <string name="normal">Normal</string>
+    <string name="dry">Dry</string>
+    <string name="desc1">Wheat (Triticum Aestivum): Wheat is widely cultivated cereal, Spread from 57°N to 45°S latitude. Wheat is cultivated in a variety of soils of India. Soils with a clay loam, good structure and moderate water holding capacity. It can germinated at temperature just above 4°C . Optimum temperature is 20°C - 22°C.</string>
+    <string name="desc2">Barley (Hordeum Vulgara): Barley is cultivated all most similar to whaet crop. It is a Rabi cereal crop and food for people of cooler and semi - acid part of the world. Barley is tolerant to salinity and alkalinity but sensitive to acidity. Barley, being salt tolerant , best suitable for sadie soil. Climate necessary for successful barley cultivation is similar to wheat.</string>
+    <string name="cauliflower">Cauliflower: Cultivation of cauliflower is done mainly on sandy to heavy soils rich in organic matter. In India, Cauliflower is grown in large areas having a cool and climate. for good seed germination, a temperature of 10°C - 21°C is required. Cabbage: Cabbage grows best where there is a long, cool growing season with temperature between 15°C - 24°C. Plant cabbage in early spring or late summer. Cabbage grows well in heavy clay or loamy soil and full sun.</string>
+    <string name="beetu">Beets can grown in cool weather of spring and fall. The optimum temperature for growth is between 15°C to 2°C. Beets grow best in loamy and soils with pH level ranging between 6.0 to 7.5.</string>
+    <string name="abc">Radish are a hardy, very easy to grow root vegetable that can be planted multiple times in a growing season. Radish prefer cool and moist condition. The optimum temperature is 10°C - 25°C. Radishes need loose, well drained soil to allow the roots to expand.  </string>
+    <string name="mustard">Mustard is a cool season crop season crop that can be grown in a short growing season varieties of yellow mustard usually mature in 80 to 85 days. Mustard can be raised on variable soil types with good drainage but is best adopted to fertile well drained , loamy soils. Optimal temperature to grow mustard is 10°C - 25°C</string>
+    <string name="maize">Maize is cultivated throughout the world from 58N to 40S latitude. It is a staple human food, feed for livestock, for fermentation and many industrial uses. Deep, fertile, rich in organic matter and  well drained the most preferred once of crop </string>
 </resources>
+

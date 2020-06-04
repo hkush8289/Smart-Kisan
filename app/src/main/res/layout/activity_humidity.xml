@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HumidityActivity">
+
+    <TextView
+        android:id="@+id/textview12"
+        android:layout_width="299dp"
+        android:layout_height="69dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="Humidity at Field"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084" />
+
+    <TextView
+        android:id="@+id/humatfield"
+        android:layout_width="215dp"
+        android:layout_height="111dp"
+        android:fontFamily="@font/bree_serif"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.197" />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart"
+        android:layout_width="390dp"
+        android:layout_height="313dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.541"></com.github.mikephil.charting.charts.LineChart>
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="316dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/bree_serif"
+        android:gravity="center"
+        android:text="Make Sure the Iot Device is connected for Real -Time Data Values."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.773" />
+</android.support.constraint.ConstraintLayout>

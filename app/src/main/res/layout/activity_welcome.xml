@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/d"
+    android:background="@drawable/c"
     tools:context=".WelcomeActivity">
 
     <ImageView
@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018"
+        app:layout_constraintVertical_bias="0.079"
         app:srcCompat="@drawable/logo" />
 
     <TextView
@@ -68,11 +68,8 @@
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
         style="@style/Base.Widget.AppCompat.Button.Borderless"
-        android:layout_width="150dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="171dp"
+        android:layout_height="76dp"
         android:clickable="true"
         android:fontFamily="@font/bree_serif"
         android:stateListAnimator="@null"
